@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "latest",
     "lodash": "latest",
+    "material-ui": "^0.16.4",
     "next": "latest"
   },
   "contributors": [
@@ -23,13 +24,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lachlanjc/calltoaction.git"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
     "url": "https://github.com/lachlanjc/calltoaction"
   },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lachlanjc/calltoaction/issues"
   }
