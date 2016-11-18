@@ -1,0 +1,27 @@
+{
+  "name": "calltoaction",
+  "version": "0.1.0",
+  "description": "Call your representatives in Congress.",
+  "private": true,
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lachlanjc/calltoaction.git"
+  },
+  "keywords": [
+    "politics"
+  ],
+  "contributors": [
+    "Lachlan Campbell <lachlan.campbell@icloud.com>",
+    "Zack Shapiro <zack@zackshapiro.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lachlanjc/calltoaction"
+  },
+  "bugs": {
+    "url": "https://github.com/lachlanjc/calltoaction/issues"
+  }
+}
