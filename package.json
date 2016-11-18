@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "people": "node data/download.js"
   },
   "keywords": [
     "politics"
   ],
   "dependencies": {
+    "axios": "latest",
+    "lodash": "latest",
     "next": "latest"
   },
   "contributors": [
