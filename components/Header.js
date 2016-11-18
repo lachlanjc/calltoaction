@@ -2,7 +2,7 @@
 import React from 'react'
 import css from 'next/css'
 
-import { white, blue500 } from 'material-ui/styles/colors'
+import { colors } from '../styles'
 
 const Header = () => (
   <header className={css(cx.root)}>
@@ -19,14 +19,14 @@ const cx = {
   root: {
     paddingTop: 64,
     paddingBottom: 64,
-    backgroundColor: blue500
+    backgroundColor: colors.red
   },
   container: {
     maxWidth: '48rem',
     margin: 'auto'
   },
   text: {
-    color: white,
+    color: colors.white,
     marginTop: 0,
     marginBottom: 16
   }
