@@ -14,8 +14,38 @@ export const colors = {
   blue
 }
 
+export const css = `
+body {
+  font-family:
+    '-apple-system',
+    BlinkMacSystemFont,
+    'Avenir Next',
+    'Helvetica Neue',
+    sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  background-color: ${colors.red};
+  color: ${colors.white};
+  padding: 4rem 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+h1 { font-size: 2rem }
+h2 { font-size: 1.5rem }
+h3 { font-size: 1.25rem }
+h4 { font-size: 1rem }
+h5 { font-size: .875rem }
+`
+
 const styles = {
-  colors
+  colors,
+  css
 }
 
 export default styles
