@@ -1,0 +1,156 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.red-blue.min.css" />
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<style>
+
+html {
+  background-color: #2196F3;
+}
+
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rep-card.mdl-card {
+  width: 512px;
+  padding: 30px;
+  overflow: visible;
+  display: none;
+  margin: 0 auto;
+}
+
+.card-holder {
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.img-placeholder {
+    border-radius: 50%;
+    height: 200px;
+    background-color: grey;
+    margin: 0 auto;
+    width: 200px;
+    position: absolute;
+    top: -20%;
+    left: -5%;
+}
+
+.address-field, .find-button {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  margin: 20px 0;
+}
+
+ul {
+  position: absolute;
+  top: 30%;
+}
+
+.top-content {
+  width: 100%;
+  padding-left: 40%;
+  margin: 0 auto;
+}
+
+.rep-state, .rep-title {
+  /*display: inline-block;*/
+  margin-top: 0;
+}
+
+.rep-title {
+  margin-bottom: 0px;
+}
+
+.rep-state {
+  font-style: italic;
+  color: blue;
+}
+
+.rep-name {
+  margin-bottom: 10px !important;
+}
+
+.call-number {
+  margin: 10px auto;
+}
+
+.rep-card {
+  display: none;
+}
+
+.rep-card.active
+ {
+   display: block;
+ }
+
+ .dot {
+   background: grey;
+   display: inline-block;
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+ }
+
+ .dot.active {
+   background: aliceblue;
+ }
+
+ .dot-holder {
+   margin-top: 10px;
+ }
+
+.card-holder, .right-arrow, .left-arrow {
+
+}
+
+</style>
+
+<script>
+
+</script>
+</head>
+<body>
+  <!-- Wide card with share menu button -->
+<div class="main-content">
+<div class="top-holder">
+<div class="left-arrow">
+</div>
+<div class="card-holder">
+<div class="rep-card active mdl-card mdl-shadow--2dp" data-index="0">
+  <div class="img-placeholder"></div>
+  <div class="top-content" align="left">
+    <h3 class="rep-name"> TITLE TITLE </h3>
+    <h6 class="rep-title"> Representative of Blah Blah </h6>
+    <div><button class="party-affil mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--blue">DEMOCRAT</button></div>
+  </div>
+  <br>
+  <h3 align="center" class="call-number">Call ###-###-####</h3>
+  <div align="center">
+    <button class="call-btn mdl-button mdl-js-button mdl-button--fab mdl-button--primary mdl-color--green">
+      <i class="material-icons">phone</i>
+    </button>
+  </div>
+</div>
+</div>
+<div class="right-arrow">
+</div>
+</div>
+
+<div align="center" class="dot-holder">
+  <div class="dot active" data-index=0></div>
+  <div class="dot" data-index=1></div>
+  <div class="dot" data-index=2></div>
+</div>
+<!-- Colored FAB button -->
+</div>
+
+</body>
+</html>
