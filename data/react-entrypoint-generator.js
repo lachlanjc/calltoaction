@@ -10,7 +10,7 @@
 const fs = require('fs')
 const forEach = require('lodash/forEach')
 const forOwn = require('lodash/forOwn')
-const reactClassString = fs.readFileSync('./components/Congressman.js', 'utf8');
+const reactClassString = fs.readFileSync('./components/Congressman.js', 'utf8')
 
 const govData = JSON.parse(
   fs.readFileSync('./data/people.json', 'utf8')
@@ -69,11 +69,11 @@ forOwn(congressByStateAndDistrict, (districts, state) => {
       '<District />': person.description,
       '<Congressman />': `${person.person.firstname} ${person.person.lastname}`,
       '<Party />': person.party,
-      '<Phone />': person.phone,
+      '<Phone />': person.phone
     }
 
     forOwn(fieldsToReplaceMap, (value, replace) => {
-      districtClassString = districtClassString.replace(replace, value);
+      districtClassString = districtClassString.replace(replace, value)
     })
 
     const fileName = `${state}-${i}.js`
