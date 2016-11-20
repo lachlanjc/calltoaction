@@ -31,6 +31,43 @@ h6 {
   color: darkgrey;
 }
 
+ul {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  margin: 25px 45px;
+  width: 100%;
+}
+
+.mdl-card {
+  width: 85%;
+  padding: 40px;
+}
+
+.mdl-card-title {
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+  color: grey;
+}
+
+
+.left-content, .right-content {
+  display: inline-block;
+  position: absolute;
+}
+.left-content {
+  width: 60%;
+}
+
+.right-content {
+  width: 40%;
+}
+
 
 </style>
 <!-- Always shows a header, even in smaller screens. -->
@@ -48,7 +85,33 @@ h6 {
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
       <h6 align="center"> Your Congressional Represenative </h6>
-
+        <ul>
+          <li>
+            <div class="rep-card mdl-card mdl-shadow--2dp">
+              <div class="left-content">
+              </div>
+              <div class="right-content">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="script-card mdl-card mdl-shadow--2dp">
+              <h2 class="mdl-card-title"> Example Script </h2>
+              <p class="mdl-card-text">
+                Political staffers report that calling the district office of your Congressional rep is the most effective way to get government to listen to you. Calls are taken more seriously and make a greater impact than emails or written letters. Your Congressional rep serves fewer constituents than your Senators, so a call to your rep is more likely to be answered and carries more relative weight.
+                </p>
+            </div>
+          </li>
+          <li>
+            <div class="info-card mdl-card mdl-shadow--2dp">
+              <h2 class="mdl-card-title"> Why call your Congressional Representative? </h2>
+              <p class="mdl-card-text">
+                Political staffers report that calling the district office of your Congressional rep is the most effective way to get government to listen to you. Calls are taken more seriously and make a greater impact than emails or written letters. Your Congressional rep serves fewer constituents than your Senators, so a call to your rep is more likely to be answered and carries more relative weight.
+                </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </main>
 </div>
