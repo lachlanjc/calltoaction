@@ -1,17 +1,21 @@
 
 import React, { Component } from 'react'
-import css from 'next/css'
 import { forEach } from 'lodash'
+
+import DivisionSearch from './DivisionSearch'
 
 import Card, { CardTitle } from 'material-ui/Card'
 import AutoComplete from 'material-ui/AutoComplete'
+import RaisedButton from 'material-ui/RaisedButton'
+import ActionSearch from 'material-ui/svg-icons/action/search'
 
 class AddressInput extends Component {
   constructor (props) {
     super(props)
     this.state = {
       value: '',
-      suggestions: []
+      suggestions: [],
+      showNext: false
     }
   }
 
@@ -40,6 +44,10 @@ class AddressInput extends Component {
     })
   }
 
+  onSearch = (e) => {
+    this.setState({ showNext: true })
+  }
+
   render () {
     const cx = {
       card: {
@@ -47,22 +55,42 @@ class AddressInput extends Component {
         textAlign: 'center'
       },
       input: {
-        marginBottom: 16,
-        maxWidth: '36rem'
+        display: 'block',
+        maxWidth: '36rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
+      btn: {
+        marginTop: 8,
+        marginBottom: 16
       }
     }
     return (
-      <Card style={cx.card}>
-        <CardTitle title="What's your address?" />
-        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig&libraries=places' />
-        <AutoComplete
-          hintText='1600 Pennsylvania Ave, Washington, DC'
-          dataSource={this.state.suggestions}
-          onUpdateInput={this.onEdit}
-          fullWidth={true}
-          style={cx.input}
-        />
-      </Card>
+      <div>
+        <Card style={cx.card}>
+          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig&libraries=places' />
+          <CardTitle title="What's your address?" />
+          <AutoComplete
+            hintText='1600 Pennsylvania Ave, Washington, DC'
+            dataSource={this.state.suggestions}
+            onUpdateInput={this.onEdit}
+            fullWidth
+            style={cx.input}
+          />
+          <RaisedButton
+            label='Search'
+            icon={<ActionSearch />}
+            onClick={this.onSearch}
+            style={cx.btn}
+            primary
+          />
+        </Card>
+        {this.state.showNext &&
+          <DivisionSearch
+            address={this.state.value}
+          />
+        }
+      </div>
     )
   }
 }
