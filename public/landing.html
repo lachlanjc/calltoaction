@@ -1,8 +1,9 @@
 <html>
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-indigo.min.css" />
-<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-indigo.min.css"/>
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig&libraries=places'/></script>
 </head>
 <body>
   <!-- Wide card with share menu button -->
@@ -41,7 +42,7 @@ h6 {
       <li class="mdl-layout-title">Call To Action</li>
       <!-- Add spacer, to align navigation to the right -->
       </div>
-    <p align="center"><input type="text" class="input-address"></input></p>
+    <p align="center"><input type="text" id="autocomplete-input" class="input-address"></input></p>
 
   </header>
 
@@ -52,5 +53,6 @@ h6 {
     </div>
   </main>
 </div>
+<script src="../scripts.js"></script>
 </body>
 </html>
