@@ -44,10 +44,14 @@ li {
 .mdl-card {
   width: 85%;
   padding: 40px;
+  position: relative;
 }
 
 .mdl-card-title {
   font-weight: 400;
+  font-size: 3.5em;
+  /*min-height: 300px;*/
+  /*margin-bottom: 0px;*/
 }
 
 p {
@@ -55,17 +59,57 @@ p {
   color: grey;
 }
 
-
-.left-content, .right-content {
-  display: inline-block;
-  position: absolute;
+.mdl-card-text {
+  font-size: 2em;
+  line-height: 1;
 }
+
 .left-content {
   width: 60%;
 }
 
-.right-content {
-  width: 40%;
+.rep-image {
+  position: absolute;
+  right: 40px;
+  float: right;
+  top: 40px;
+}
+.rep-title, .rep-affil {
+  font-size: 2em;
+}
+
+.rep-name {
+  font-size: 3em;
+}
+
+
+.rep-card {
+  min-height: 400px;
+}
+
+.right-content, .left-content {
+  display: inline-block;
+}
+
+.call-button {
+  background: rgb(156,39,176);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  margin: -40px;
+  margin-bottom: 0px;
+  color: fff;
+  text-align: center;
+  font-size: 35px;
+  padding: 10px;
+  height: 15%;
+}
+
+.call-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -89,10 +133,21 @@ p {
         <ul>
           <li>
             <div class="rep-card mdl-card mdl-shadow--2dp">
+
               <div class="left-content">
+                <h2 class="rep-name"> Hakeem S. Jeffries </h2>
+                <p class="rep-title">Some Rep Title Here </p>
+                <p class="rep-affil"> Democrat </p>
               </div>
               <div class="right-content">
+                <img class="rep-image" src="http://fillmurray.com/225/275"/>
               </div>
+
+              <div class="call-button">
+                <div class="call-text"><i class="material-icons mdl-list__item-icon mdl-color-text--white">phone</i>
+Call ###-###-####</div>
+              </div>
+
             </div>
           </li>
           <li>
@@ -113,8 +168,6 @@ p {
           </li>
         </ul>
       </div>
-
-      <h6 align="center">Your Congressional Representative</h6>
     </div>
   </main>
 </div>
