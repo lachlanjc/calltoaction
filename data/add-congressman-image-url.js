@@ -1,3 +1,4 @@
+
 const fs = require('fs')
 const forEach = require('lodash/forEach')
 
@@ -5,7 +6,7 @@ const govData = JSON.parse(
   fs.readFileSync('./data/people.json', 'utf8')
 )
 
-const imgRoot = 'https://theunitedstates.io/images/congress';
+const imgRoot = 'https://theunitedstates.io/images/congress'
 const smallImgDimensions = '225x275'
 const largeImgDimensions = '450x550'
 
@@ -24,11 +25,11 @@ forEach(govData, (person) => {
     return
   }
 
-  const bioGuideId = person.person.bioguideid
+  const { bioguideid } = person.person
 
   person.photos = {
-    small: `${imgRoot}/${smallImgDimensions}/${bioGuideId}.jpg`,
-    large: `${imgRoot}/${largeImgDimensions}/${bioGuideId}.jpg`,
+    small: `${imgRoot}/${smallImgDimensions}/${bioguideid}.jpg`,
+    large: `${imgRoot}/${largeImgDimensions}/${bioguideid}.jpg`
   }
 
   people.push(person)
@@ -36,7 +37,7 @@ forEach(govData, (person) => {
 
 fs.writeFile('./data/people.json', JSON.stringify(people), err => {
   if (err) {
-    console.log(err)
+    console.error(err)
   } else {
     console.log(`✅ Saved people (${people.length})`)
   }
