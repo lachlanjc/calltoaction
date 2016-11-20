@@ -24,6 +24,9 @@
     "react-dom": "^15.4.0",
     "static-react": "^3.2.0"
   },
+  "devDependencies": {
+    "sync-exec": "^0.6.2"
+  },
   "contributors": [
     "Lachlan Campbell <lachlan.campbell@icloud.com>",
     "Zack Shapiro <zack@zackshapiro.com>",
@@ -36,8 +39,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lachlanjc/calltoaction/issues"
-  },
-  "devDependencies": {
-    "sync-exec": "^0.6.2"
   }
 }
