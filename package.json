@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "people": "node data/download.js"
+    "people": "node data/download.js",
+    "people-images": "node data/add-congressman-image-url.js"
   },
   "keywords": [
     "politics"
