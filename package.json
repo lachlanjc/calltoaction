@@ -7,7 +7,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "people": "node data/download.js"
+    "people": "node data/download.js",
+    "generate-react": "node data/react-entrypoint-generator.js",
+    "generate-html": "node data/html-generator.js",
+    "static": "npm run generate-react && npm run generate-html"
   },
   "keywords": [
     "politics"
@@ -16,11 +19,18 @@
     "axios": "latest",
     "lodash": "latest",
     "material-ui": "^0.16.4",
-    "next": "latest"
+    "next": "latest",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "static-react": "^3.2.0"
+  },
+  "devDependencies": {
+    "sync-exec": "^0.6.2"
   },
   "contributors": [
     "Lachlan Campbell <lachlan.campbell@icloud.com>",
-    "Zack Shapiro <zack@zackshapiro.com>"
+    "Zack Shapiro <zack@zackshapiro.com>",
+    "Mitul Patel <mitulp91@gmail.com>"
   ],
   "repository": {
     "type": "git",

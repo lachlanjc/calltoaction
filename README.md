@@ -7,4 +7,4 @@ Coming soon.
 
 ---
 
-*A thing by @lachlanjc and @zackshapiro.*
+*A thing by @lachlanjc, @zackshapiro, and @mitulp91.*
