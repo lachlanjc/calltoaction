@@ -1,76 +1,56 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.red-blue.min.css" />
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-indigo.min.css" />
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </head>
 <body>
   <!-- Wide card with share menu button -->
 <style>
-
-html {
-  background-color: #2196F3;
+.mdl-layout-title {
+  font-size: 4em;
+}
+.mdl-layout__header-row {
+  height: 140px;
 }
 
-.main-card.mdl-card {
-  width: 512px;
-  margin: 0 auto;
-  top: 30%;
-  padding: 30px;
+.input-address {
+  font-size: 3em;
+  border-radius: 25px;
+  width: 90%;
+  padding: 10px;
+  margin-bottom:20px;
 }
 
-.logo-placeholder {
-  width: 80%;
-  height: 100px;
-  background-color: grey;
-  margin: 0 auto;
+body {
+  background: #f9f9f9;
 }
 
-.address-field, .find-button {
-  margin: 0 auto;
+h6 {
+  font-size: 2.5em;
+  color: darkgrey;
 }
 
-ul {
-    position: absolute;
-    top: 30%;
-}
-
-li {
-  list-style: none;
-  margin: 20px 0;
-}
 
 </style>
-<ul>
-<li><button class="fab-1 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">account_balance</i>
-</button></li>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header mdl-shadow--4dp">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <li class="mdl-layout-title">Call To Action</li>
+      <!-- Add spacer, to align navigation to the right -->
+      </div>
+    <p align="center"><input type="text" class="input-address"></input></p>
 
-<!-- Colored FAB button -->
-<li><button class="fab-2 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">info</i>
-</button></li>
+  </header>
 
-<!-- Colored FAB button -->
-<li><button class="fab-3 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">room</i>
-</button>
-</li>
-</ul>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+      <h6 align="center"> Your Congressional Represenative </h6>
 
-<div class="main-card mdl-card mdl-shadow--2dp">
-  <div class="logo-placeholder">SOME LOGO HERE</div>
-  <div class="address-field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="address-input">
-    <label class="mdl-textfield__label" for="address-input">Enter and Address or Zip Code or State</label>
-  </div>
-  <button class="find-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-    FIND MY REP
-  </button>
+    </div>
+  </main>
 </div>
-
-<!-- Colored FAB button -->
-
-
 </body>
 </html>
