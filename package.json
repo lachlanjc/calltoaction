@@ -10,7 +10,8 @@
     "people": "node data/download.js",
     "generate-react": "node data/react-entrypoint-generator.js",
     "generate-html": "node data/html-generator.js",
-    "static": "npm run generate-react && npm run generate-html"
+    "static": "npm run generate-react && npm run generate-html",
+    "people-images": "node data/add-congressman-image-url.js"
   },
   "keywords": [
     "politics"
