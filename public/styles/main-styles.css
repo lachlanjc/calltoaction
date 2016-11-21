@@ -89,6 +89,10 @@ p {
   background-color: #FFF !important;
 }
 
+label.mdl-textfield__label {
+  font-size: 14px !important;
+}
+
 .mdl-layout__header .mdl-textfield__label,
 .mdl-layout__header .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   color: #FFF !important;
