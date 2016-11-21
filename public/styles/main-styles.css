@@ -175,17 +175,17 @@ p {
 
 /** Footer */
 
-.footer {
+footer {
   padding-top: 2rem;
 }
 
-.footer p {
+footer p {
   font-size: 0.75rem;
   line-height: 1.4;
   text-align: center;
 }
 
-.footer a {
+footer a {
   color: #757575;
   text-decoration: none;
 }
