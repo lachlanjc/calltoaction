@@ -101,7 +101,7 @@ p {
 
 /** Representative Data */
 
-.rep-data-container > h3 {
+#repContentContainer > h3 {
   font-size: 1.5rem;
   text-align: center;
   color: #757575;
@@ -175,8 +175,8 @@ footer {
 }
 
 footer p {
-  font-size: 0.75rem;
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.6;
   text-align: center;
 }
 
