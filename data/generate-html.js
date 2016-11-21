@@ -10,7 +10,9 @@
 const fs = require('fs')
 const forEach = require('lodash/forEach')
 const forOwn = require('lodash/forOwn')
-const reactClassString = fs.readFileSync('./components/Congressman.js', 'utf8')
+const Handlebars = require('handlebars')
+const handlebarsTemplateString = fs.readFileSync('./public/representative-card-template.html', 'utf8')
+const template = Handlebars.compile(handlebarsTemplateString);
 
 const govData = JSON.parse(
   fs.readFileSync('./data/people.json', 'utf8')
@@ -51,19 +53,16 @@ forEach(govData, (person) => {
 })
 
 console.log('Finished breaking down congressmen by district and state.')
-console.log('Now attempting to generate a Root react component file dynamically based on states and districts.')
+console.log('Now attempting to generate static HTML that represents these congressmen')
 
 // First create the specific district classes.
 forOwn(congressByStateAndDistrict, (districts, state) => {
-  const localClassString = reactClassString.replace('<State />', state)
-
   for (let i = 0; i < districts.length; i++) {
     if (!districts[i]) {
       continue
     }
 
     const person = districts[i]
-    let districtClassString = localClassString
 
     const fieldsToReplaceMap = {
       '<District />': person.description,
@@ -72,12 +71,18 @@ forOwn(congressByStateAndDistrict, (districts, state) => {
       '<Phone />': person.phone
     }
 
-    forOwn(fieldsToReplaceMap, (value, replace) => {
-      districtClassString = districtClassString.replace(replace, value)
-    })
+    let districtHtml = template({
+      name: `${person.person.firstname} ${person.person.lastname}`,
+      title: person.description,
+      party: person.party,
+      phoneNumber: person.phone,
+      imageUrl: person.photos.small,
+    });
 
-    const fileName = `${state}-${i}.js`
-    fs.writeFileSync(`./build/${fileName}`, districtClassString)
+    console.log(districtHtml);
+
+    const fileName = `${state}-${i}.html`
+    fs.writeFileSync(`./dist/${fileName}`, districtHtml)
   }
 })
 
