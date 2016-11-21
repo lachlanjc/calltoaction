@@ -63,12 +63,13 @@ p {
 
 .mdl-layout__header-row:first-child {
   height: auto;
-  margin: 1rem auto .5rem;
+  margin: .5rem auto;
 }
 
-.mdl-layout-title {
-  font-size: 2rem;
-  margin: 0;
+.header__wordmark {
+  fill: white;
+  width: 216px;
+  height: 40px;
 }
 
 .header-input-wrapper {
