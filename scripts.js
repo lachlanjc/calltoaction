@@ -134,11 +134,11 @@ var app = {
 	 */
 	renderRepresentativeCard: function(templateString) {
 		templateString || (templateString = app.devDummyData);
-		var repDataContainer = document.getElementById('repDataContainer');
+		var repContainer = document.getElementById('repContentContainer');
 		var repCardList = document.getElementById('repList');
 
 		// Remove hidden class
-		repDataContainer && (repDataContainer.classList = '');
+		repContainer && (repContainer.classList = '');
 
 		// Append template to rep-card list
 		var repCard = document.createElement('div');
