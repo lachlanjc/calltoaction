@@ -1,76 +1,177 @@
 <html>
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.red-blue.min.css" />
-<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.purple-indigo.min.css"/>
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig&libraries=places'/></script>
 </head>
 <body>
   <!-- Wide card with share menu button -->
 <style>
-
-html {
-  background-color: #2196F3;
+.mdl-layout-title {
+  font-size: 4em;
+}
+.mdl-layout__header-row {
+  height: 140px;
 }
 
-.main-card.mdl-card {
-  width: 512px;
-  margin: 0 auto;
-  top: 30%;
-  padding: 30px;
+.input-address {
+  font-size: 3em;
+  border-radius: 25px;
+  width: 90%;
+  padding: 10px;
+  margin-bottom:20px;
 }
 
-.logo-placeholder {
-  width: 80%;
-  height: 100px;
-  background-color: grey;
-  margin: 0 auto;
+body {
+  background: #f9f9f9;
 }
 
-.address-field, .find-button {
-  margin: 0 auto;
+h6 {
+  font-size: 2.5em;
+  color: darkgrey;
 }
 
 ul {
-    position: absolute;
-    top: 30%;
+  margin: 0 auto;
 }
 
 li {
   list-style: none;
-  margin: 20px 0;
+  margin: 25px 45px;
+  width: 100%;
 }
 
+.mdl-card {
+  width: 85%;
+  padding: 40px;
+  position: relative;
+}
+
+.mdl-card-title {
+  font-weight: 400;
+  font-size: 3.5em;
+  /*min-height: 300px;*/
+  /*margin-bottom: 0px;*/
+}
+
+p {
+  font-weight: 300;
+  color: grey;
+}
+
+.mdl-card-text {
+  font-size: 2em;
+  line-height: 1;
+}
+
+.left-content {
+  width: 60%;
+}
+
+.rep-image {
+  position: absolute;
+  right: 40px;
+  float: right;
+  top: 40px;
+}
+.rep-title, .rep-affil {
+  font-size: 2em;
+}
+
+.rep-name {
+  font-size: 3em;
+}
+
+
+.rep-card {
+  min-height: 400px;
+}
+
+.right-content, .left-content {
+  display: inline-block;
+}
+
+.call-button {
+  background: rgb(156,39,176);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  margin: -40px;
+  margin-bottom: 0px;
+  color: fff;
+  text-align: center;
+  font-size: 35px;
+  padding: 10px;
+  height: 15%;
+}
+
+.call-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 </style>
-<ul>
-<li><button class="fab-1 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">account_balance</i>
-</button></li>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header mdl-shadow--4dp">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <li class="mdl-layout-title">Call To Action</li>
+      <!-- Add spacer, to align navigation to the right -->
+      </div>
+    <p align="center"><input type="text" id="autocomplete-input" class="input-address"></input></p>
 
-<!-- Colored FAB button -->
-<li><button class="fab-2 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">info</i>
-</button></li>
+  </header>
 
-<!-- Colored FAB button -->
-<li><button class="fab-3 mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
-<i class="material-icons">room</i>
-</button>
-</li>
-</ul>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
 
-<div class="main-card mdl-card mdl-shadow--2dp">
-  <div class="logo-placeholder">SOME LOGO HERE</div>
-  <div class="address-field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="address-input">
-    <label class="mdl-textfield__label" for="address-input">Enter and Address or Zip Code or State</label>
-  </div>
-  <button class="find-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-    FIND MY REP
-  </button>
+      <h6 align="center"> Your Congressional Represenative </h6>
+        <ul>
+          <li>
+            <div class="rep-card mdl-card mdl-shadow--2dp">
+
+              <div class="left-content">
+                <h2 class="rep-name"> Hakeem S. Jeffries </h2>
+                <p class="rep-title">Some Rep Title Here </p>
+                <p class="rep-affil"> Democrat </p>
+              </div>
+              <div class="right-content">
+                <img class="rep-image" src="http://fillmurray.com/225/275"/>
+              </div>
+
+              <div class="call-button">
+                <div class="call-text"><i class="material-icons mdl-list__item-icon mdl-color-text--white">phone</i>
+Call ###-###-####</div>
+              </div>
+
+            </div>
+          </li>
+          <li>
+            <div class="script-card mdl-card mdl-shadow--2dp">
+              <h2 class="mdl-card-title"> Example Script </h2>
+              <p class="mdl-card-text">
+                Political staffers report that calling the district office of your Congressional rep is the most effective way to get government to listen to you. Calls are taken more seriously and make a greater impact than emails or written letters. Your Congressional rep serves fewer constituents than your Senators, so a call to your rep is more likely to be answered and carries more relative weight.
+                </p>
+            </div>
+          </li>
+          <li>
+            <div class="info-card mdl-card mdl-shadow--2dp">
+              <h2 class="mdl-card-title"> Why call your Congressional Representative? </h2>
+              <p class="mdl-card-text">
+                Political staffers report that calling the district office of your Congressional rep is the most effective way to get government to listen to you. Calls are taken more seriously and make a greater impact than emails or written letters. Your Congressional rep serves fewer constituents than your Senators, so a call to your rep is more likely to be answered and carries more relative weight.
+                </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
 </div>
-
-<!-- Colored FAB button -->
-
-
+<script src="../scripts.js"></script>
 </body>
 </html>
