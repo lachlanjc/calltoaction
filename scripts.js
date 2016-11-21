@@ -6,6 +6,10 @@ var app = {
 
 	autocomplete: null,
 
+	baseCivicsURL: 'https://www.googleapis.com/civicinfo/v2',
+
+	civicsKey: 'AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig',
+
 	/**
 	 * Set up google address autocomplete on the address input
 	 */
@@ -14,13 +18,13 @@ var app = {
 			return;
 		}
 
-		app.autocomplete = new google.maps.places.Autocomplete(app.addressInput, {
+		this.autocomplete = new google.maps.places.Autocomplete(this.addressInput, {
 			//options
 		});
 
-		app._geolocateUserForAutocomplete();
+		this._geolocateUserForAutocomplete();
 
-		app.autocomplete.addListener('place_changed', app.searchRepresentativesByAddress);
+		this.autocomplete.addListener('place_changed', this.searchRepresentativesByAddress.bind(this));
 	},
 
 	/**
@@ -45,26 +49,69 @@ var app = {
 	},
 
 	/**
-	 * Gets the address from the autocomplete and search
-	 * for the representatives for that area
-	 */
-	searchRepresentativesByAddress: function() {
-		var address = app.getFormattedAddress();
-
-		if (!address) {
-			return;
-		}
-	},
-
-	/**
 	 * Returns the formatted address from the autocomplete input
 	 * @return {string}
 	 */
 	getFormattedAddress: function() {
-		var address = app.autocomplete && app.autocomplete.getPlace();
+		var address = this.autocomplete && this.autocomplete.getPlace();
 
 		return address ? address.formatted_address : '';
-	}
+	},
+
+	/**
+	 * Gets the address from the autocomplete and search
+	 * for the representatives for that area
+	 */
+	searchRepresentativesByAddress: function() {
+		var queryString = this._getRepSearchQueryString();
+		var request = new XMLHttpRequest();
+
+		request.onreadystatechange = function() {
+			if (request.readyState === 4 && request.status === 200) {
+				var dataString = request.responseText.match(/ocd-division\/country:us\/state:\w+\/cd:\d+/)[0];
+				var state = dataString.match(/state:(\w{2})/)[1];
+				var districtNum = parseInt(dataString.match(/\d+$/)[0], 10);
+
+				if (state && districtNum) {
+					this.getRepresentativeData(state, districtNum);
+				}
+			} else {
+				// handle errors
+			}
+		}.bind(app);
+
+		request.open(
+			'GET',
+			this.baseCivicsURL + '/representatives?' + queryString
+		);
+
+		request.send(null);
+	},
+
+	_getRepSearchQueryString: function() {
+		return this._encodeData({
+			key: this.civicsKey,
+			address: this.getFormattedAddress(),
+			fields: 'divisions',
+			includeOffices: false
+		});
+	},
+
+	_encodeData: function(data) {
+	    return Object.keys(data).map(function(key) {
+	        return [key, data[key]].map(encodeURIComponent).join("=");
+	    }).join("&");
+	},
+
+	/**
+	 * Searches for the representative data by state & district
+	 * number and then renders the rep-cards on success
+	 * @param  {string} state
+	 * @param  {string} districtNum
+	 */
+	getRepresentativeData: function(state, districtNum) {
+		debugger;
+	},
 };
 
 document.addEventListener('DOMContentLoaded', function() {
