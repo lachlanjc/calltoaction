@@ -49,14 +49,6 @@ class DivisionSearch extends Component {
     const { status, address } = this.props
     let loadingStatus = status
     if (status == 'done') loadingStatus = 'hidden'
-    const cx = {
-      card: {
-        padding: 16,
-        textAlign: 'center'
-      },
-      list: {
-      }
-    }
     return (
       <div>
         <RefreshIndicator

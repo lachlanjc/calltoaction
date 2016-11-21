@@ -1,15 +1,17 @@
 
-import { white, blueGrey400, blueGrey900, red500, blue500 } from 'material-ui/styles/colors'
+import { white, blueGrey400, blueGrey900, red500, blue500, purple500 } from 'material-ui/styles/colors'
 
 export const black = blueGrey900
 export const grey = blueGrey400
 export const red = red500
 export const blue = blue500
+export const purple = purple500
 
 export const colors = {
   black,
   grey,
   white,
+  purple,
   red,
   blue
 }
@@ -24,7 +26,7 @@ body {
     sans-serif;
   line-height: 1.5;
   margin: 0;
-  background-color: ${colors.red};
+  background-color: ${colors.purple};
   color: ${colors.white};
   padding: 4rem 1rem;
 }
