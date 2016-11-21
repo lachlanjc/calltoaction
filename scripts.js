@@ -6,6 +6,8 @@ var app = {
 
 	devDummyData: '<li class="rep-card mdl-card mdl-shadow--2dp"><div class="rep-card-content"><div class="left-content"><h3 class="rep-name mdl-card-title">Hakeem Jeffries</h3><p class="rep-title">Representative for New York&#x27;s 8th congressional district</p><p class="rep-affil">Democrat</p></div><div class="right-content"><img class="rep-image" src="https://theunitedstates.io/images/congress/225x275/J000294.jpg"/></div></div><a class="mdl-button call-button" href="tel:202-225-5936"><i class="material-icons mdl-list__item-icon mdl-color-text--white">phone</i>202-225-5936</a></li>',
 
+	emptyStateHTML: '<div class="empty-state">Sorry, we were unable to find any results for that address.</div>',
+
 	autocomplete: null,
 
 	baseCivicsURL: 'https://www.googleapis.com/civicinfo/v2',
@@ -18,9 +20,7 @@ var app = {
 			return;
 		}
 
-		this.autocomplete = new google.maps.places.SearchBox(this.addressInput, {
-			//options
-		});
+		this.autocomplete = new google.maps.places.SearchBox(this.addressInput);
 
 		this._geolocateUserForAutocomplete();
 
@@ -78,9 +78,11 @@ var app = {
 
 				if (state && districtNum) {
 					this.getRepresentativeData(state, districtNum);
+				} else {
+					this._handleSearchError();
 				}
 			} else {
-				// handle errors
+				this._handleSearchError();
 			}
 		}.bind(app);
 
@@ -123,7 +125,7 @@ var app = {
 			if (request.readyState === 4 && request.status === 200) {
 				this.renderRepresentativeCard(request.responseText);
 			} else {
-				// handle errors
+				this._handleSearchError();
 			}
 		}.bind(app);
 
@@ -146,6 +148,14 @@ var app = {
 
 		// Add rep-card to page
 		repCardList.innerHTML = templateString;
+	},
+
+	_handleSearchError: function() {
+		this.renderRepresentativeCard(this.emptyStateHTML);
+	},
+
+	_testRenderRepresentativeCard: function() {
+		this.renderRepresentativeCard(this.devDummyData);
 	},
 };
 

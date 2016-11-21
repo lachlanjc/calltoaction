@@ -98,6 +98,10 @@ label.mdl-textfield__label {
   color: #FFF !important;
 }
 
+.social-share {
+  margin-left: 1rem;
+}
+
 /** Basic Components */
 
 .mdl-card {
@@ -125,6 +129,10 @@ label.mdl-textfield__label {
   font-size: 1.5rem;
   text-align: center;
   color: #757575;
+}
+
+.empty-state {
+  text-align: center;
 }
 
 .rep-card-content {
