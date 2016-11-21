@@ -105,6 +105,12 @@ var app = {
 	 * @param  {string} districtNum
 	 */
 	getRepresentativeData: function(state, districtNum) {
+		if (typeof state !== 'string' && typeof districtNum !== 'number') {
+			return;
+		}
+
+		state = state.toUpperCase();
+
 		var request = new XMLHttpRequest();
 
 		request.onreadystatechange = function() {
@@ -125,7 +131,7 @@ var app = {
 	 * @param  {string} templateString
 	 */
 	renderRepresentativeCard: function(templateString) {
-
+		debugger;
 	},
 };
 
