@@ -54,7 +54,7 @@ var app = {
 	 */
 	getFormattedAddress: function() {
 		var address = this.autocomplete && this.autocomplete.getPlaces()[0];
-		return address ? address.formatted_address : '';
+		return address ? address.formatted_address : this.addressInput.value;
 	},
 
 	/**
