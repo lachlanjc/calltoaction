@@ -28,6 +28,11 @@ var app = {
 
 		this._geolocateUserForAutocomplete();
 
+		this.addressInput.addEventListener('blur', function(e){
+			this.searchRepresentativesByAddress(e);
+			console.log('blur');
+		}.bind(this));
+
 		this.autocomplete.addListener('place_changed', this.searchRepresentativesByAddress.bind(this));
 	},
 
@@ -68,7 +73,7 @@ var app = {
 	 * Gets the address from the autocomplete and search
 	 * for the representatives for that area
 	 */
-	searchRepresentativesByAddress: function() {
+	searchRepresentativesByAddress: function(e) {
 		var queryString = this._getRepSearchQueryString();
 		var request = new XMLHttpRequest();
 
@@ -107,6 +112,10 @@ var app = {
 		request.open('GET', this.baseCivicsURL + '/representatives?' + queryString);
 
 		request.send(null);
+
+		if (e && e.currentTarget) {
+			return false;
+		}
 	},
 
 	_getRepSearchQueryString: function() {
