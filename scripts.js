@@ -80,7 +80,12 @@ var app = {
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
 				if (request.status === 200) {
-					var matchesResults = request.responseText.match(/ocd-division\/country:us\/(?:state|district):\w+\//);
+					var matchesResults = request.responseText.match(/ocd-division\/country:us\/(?:state|district):\w+\/cd:\d+/);
+
+					// Handle the geographical weirdo DC
+					if (!matchesResults) {
+						matchesResults = request.responseText.match(/ocd-division\/country:us\/(?:state|district):\w+\//);
+					}
 
 					if (matchesResults) {
 						var dataString = matchesResults[0];
