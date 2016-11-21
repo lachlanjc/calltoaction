@@ -63,7 +63,7 @@ p {
 
 .mdl-layout__header-row:first-child {
   height: auto;
-  margin: .5rem auto;
+  margin: .5rem auto .75rem;
 }
 
 .header-input-wrapper {
@@ -78,6 +78,10 @@ p {
   font-family: inherit;
   font-size: 1.5rem;
   border-bottom-color: rgba(255, 255, 255, .5) !important;
+}
+
+.mdl-layout__header .mdl-textfield__input::placeholder {
+  color: rgba(255, 255, 255, .75) !important;
 }
 
 .mdl-layout__header .mdl-textfield__label:after {
