@@ -4,6 +4,8 @@ var app = {
 
 	addressInput: document.getElementsByClassName('input-address')[0],
 
+	devDummyData: '<li class="rep-card mdl-card mdl-shadow--2dp"><div class="rep-card-content"><div class="left-content"><h3 class="rep-name">Hakeem Jeffries</h3><p class="rep-title">Representative for New York&#x27;s 8th congressional district</p><p class="rep-affil">Democrat</p></div><div class="right-content"><img class="rep-image" src="https://theunitedstates.io/images/congress/225x275/J000294.jpg"/></div></div><a class="mdl-button call-button" href="tel:202-225-5936"><i class="material-icons mdl-list__item-icon mdl-color-text--white">phone</i>Call 202-225-5936</a></li>',
+
 	autocomplete: null,
 
 	baseCivicsURL: 'https://www.googleapis.com/civicinfo/v2',
@@ -131,7 +133,18 @@ var app = {
 	 * @param  {string} templateString
 	 */
 	renderRepresentativeCard: function(templateString) {
-		debugger;
+		templateString || (templateString = app.devDummyData);
+		var repDataContainer = document.getElementById('repDataContainer');
+		var repCardList = document.getElementById('repList');
+
+		// Remove hidden class
+		repDataContainer && (repDataContainer.classList = '');
+
+		// Append template to rep-card list
+		var repCard = document.createElement('div');
+		repCard.innerHTML = templateString;
+
+		repCardList.appendChild(repCard.children[0]);
 	},
 };
 

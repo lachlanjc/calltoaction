@@ -106,7 +106,7 @@ p {
 
 /** Representative Data */
 
-.rep-data-container > h3 {
+#repDataContainer > h3 {
   font-size: 1.5rem;
   text-align: center;
   color: #757575;
