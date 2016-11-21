@@ -159,6 +159,9 @@ p {
   border-radius: 0;
   text-align: center;
   font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .call-button i {
