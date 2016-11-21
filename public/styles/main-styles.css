@@ -1,0 +1,107 @@
+.content-wrapper {
+  max-width: 1000px;
+  padding: 0 1rem;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header-input-wrapper {
+  margin-bottom: 1rem;
+}
+
+.input-address {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+}
+
+.mdl-layout-title {
+  font-size: 2rem;
+}
+
+body {
+  background: #eee;
+}
+
+h6 {
+  font-size: 2.5em;
+  color: darkgrey;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 25px 45px;
+  width: 100%;
+}
+
+p {
+  font-weight: 300;
+  color: grey;
+}
+
+.mdl-card {
+  padding: 1.5rem;
+  position: relative;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.rep-card-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.mdl-card-text {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.left-content {
+  width: calc(100% - 225px);
+}
+
+.rep-image {
+  width: 225px;
+  height: auto;
+}
+
+.rep-title, .rep-affil {
+  font-size: 2em;
+}
+
+.right-content, .left-content {
+  display: inline-block;
+}
+
+.call-button {
+  position: relative;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  width: 102%;
+  width: calc(100% + 1rem);
+  padding: 1rem;
+  background: rgb(156,39,176);
+  color: #FFF;
+  border-radius: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.rep-data-container > h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #757575;
+}
