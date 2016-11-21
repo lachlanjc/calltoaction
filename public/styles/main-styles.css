@@ -66,12 +66,6 @@ p {
   margin: .5rem auto;
 }
 
-.header__wordmark {
-  fill: white;
-  width: 216px;
-  height: 40px;
-}
-
 .header-input-wrapper {
   margin: 0 auto;
 }
