@@ -172,3 +172,20 @@ p {
     width: 66.6%;
   }
 }
+
+/** Footer */
+
+.footer {
+  padding-top: 2rem;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.footer a {
+  color: #757575;
+  text-decoration: none;
+}
