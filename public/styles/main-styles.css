@@ -1,0 +1,102 @@
+.input-address {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.mdl-layout__header-row {
+  max-width: 1000px;
+  padding: 0 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+h6 {
+  font-size: 2.5em;
+  color: darkgrey;
+}
+
+ul {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  margin: 25px 45px;
+  width: 100%;
+}
+
+.mdl-card {
+  width: 85%;
+  padding: 40px;
+  position: relative;
+}
+
+.mdl-card-title {
+  font-weight: 400;
+  font-size: 3.5em;
+  /*min-height: 300px;*/
+  /*margin-bottom: 0px;*/
+}
+
+p {
+  font-weight: 300;
+  color: grey;
+}
+
+.mdl-card-text {
+  font-size: 2em;
+  line-height: 1;
+}
+
+.left-content {
+  width: 60%;
+}
+
+.rep-image {
+  position: absolute;
+  right: 40px;
+  float: right;
+  top: 40px;
+}
+.rep-title, .rep-affil {
+  font-size: 2em;
+}
+
+.rep-name {
+  font-size: 3em;
+}
+
+
+.rep-card {
+  min-height: 400px;
+}
+
+.right-content, .left-content {
+  display: inline-block;
+}
+
+.call-button {
+  background: rgb(156,39,176);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  margin: -40px;
+  margin-bottom: 0px;
+  color: fff;
+  text-align: center;
+  font-size: 35px;
+  padding: 10px;
+  height: 15%;
+}
+
+.call-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
