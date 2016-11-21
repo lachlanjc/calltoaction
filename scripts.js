@@ -85,7 +85,7 @@ var app = {
 					if (matchesResults) {
 						var dataString = matchesResults[0];
 						var state = dataString.match(/(?:state|district):(\w{2})/)[1];
-						var districtNum = parseInt(dataString.match(/\d+$/)[0], 10);
+						var districtNum = (state === 'dc') ? 1 : parseInt(dataString.match(/\d+$/)[0], 10);
 
 						if (state && districtNum) {
 							this.getRepresentativeData(state, districtNum);
