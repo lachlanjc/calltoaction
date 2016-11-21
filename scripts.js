@@ -58,8 +58,8 @@ var app = {
 	 */
 	getFormattedAddress: function() {
 		var address = this.autocomplete && this.autocomplete.getPlace();
-		return (address && address.formatted_address) 
-			? address.formatted_address 
+		return (address && address.formatted_address)
+			? address.formatted_address
 			: this.addressInput.value
 		;
 	},
@@ -78,18 +78,24 @@ var app = {
 		// }
 
 		request.onreadystatechange = function() {
-			if (request.readyState === 4 && request.status === 200) {
-				var dataString = request.responseText.match(/ocd-division\/country:us\/state:\w+\/cd:\d+/)[0];
-				var state = dataString.match(/state:(\w{2})/)[1];
-				var districtNum = parseInt(dataString.match(/\d+$/)[0], 10);
+			if (request.readyState === 4) {
+				if (request.status === 200) {
+					var matchesResults = request.responseText.match(/ocd-division\/country:us\/state:\w+\/cd:\d+/);
 
-				if (state && districtNum) {
-					this.getRepresentativeData(state, districtNum);
+					if (matchesResults) {
+						var dataString = matchesResults[0];
+						var state = dataString.match(/state:(\w{2})/)[1];
+						var districtNum = parseInt(dataString.match(/\d+$/)[0], 10);
+
+						if (state && districtNum) {
+							this.getRepresentativeData(state, districtNum);
+						}
+					} else {
+						this._handleSearchError();
+					}
 				} else {
 					this._handleSearchError();
 				}
-			} else {
-				this._handleSearchError();
 			}
 		}.bind(app);
 
@@ -129,10 +135,12 @@ var app = {
 		var request = new XMLHttpRequest();
 
 		request.onreadystatechange = function() {
-			if (request.readyState === 4 && request.status === 200) {
-				this.renderRepresentativeCard(request.responseText);
-			} else {
-				this._handleSearchError();
+			if (request.readyState === 4) {
+				if(request.status === 200) {
+					this.renderRepresentativeCard(request.responseText);
+				} else {
+					this._handleSearchError();
+				}
 			}
 		}.bind(app);
 
