@@ -80,6 +80,10 @@ p {
   border-bottom-color: rgba(255, 255, 255, .5) !important;
 }
 
+.mdl-layout__header .mdl-textfield__input::placeholder {
+  color: rgba(255, 255, 255, .75) !important;
+}
+
 .mdl-layout__header .mdl-textfield__label:after {
   background-color: #FFF !important;
 }
