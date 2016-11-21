@@ -80,11 +80,11 @@ var app = {
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
 				if (request.status === 200) {
-					var matchesResults = request.responseText.match(/ocd-division\/country:us\/state:\w+\/cd:\d+/);
+					var matchesResults = request.responseText.match(/ocd-division\/country:us\/(?:state|district):\w+\//);
 
 					if (matchesResults) {
 						var dataString = matchesResults[0];
-						var state = dataString.match(/state:(\w{2})/)[1];
+						var state = dataString.match(/(?:state|district):(\w{2})/)[1];
 						var districtNum = parseInt(dataString.match(/\d+$/)[0], 10);
 
 						if (state && districtNum) {
