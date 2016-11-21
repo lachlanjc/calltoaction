@@ -163,10 +163,10 @@ p {
   align-items: center;
 }
 
-.call-button i {
-  margin-right: 2rem;
-  font-size: 1em;
-  vertical-align: top;
+.call-button .material-icons {
+  margin-right: 3rem;
+  font-size: 1.25em;
+  height: 1em;
 }
 
 @media (max-width: 600px) {
