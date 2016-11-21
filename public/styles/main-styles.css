@@ -157,16 +157,20 @@ p {
   color: #FFF;
   border-radius: 0;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.call-button:hover {
+  background-color: #5d1d5d;
+}
+
 .call-button .material-icons {
-  margin-right: 3rem;
-  font-size: 1.25em;
-  height: 1em;
+  margin-right: 2rem;
+  font-size: inherit;
+  height: auto;
 }
 
 @media (max-width: 600px) {
@@ -183,6 +187,15 @@ p {
 
   .left-content {
     width: 66.6%;
+  }
+
+  .call-button,
+  .call-button .material-icons {
+    font-size: 1.25rem;
+  }
+
+  .call-button .material-icons {
+    margin-right: 1rem;
   }
 }
 
