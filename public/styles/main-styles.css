@@ -63,7 +63,7 @@ p {
 
 .mdl-layout__header-row:first-child {
   height: auto;
-  margin: .5rem auto;
+  margin: .5rem auto .75rem;
 }
 
 .header-input-wrapper {
