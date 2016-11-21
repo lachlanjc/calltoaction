@@ -21,7 +21,9 @@ var app = {
 		}
 
 		this.autocomplete = new google.maps.places.Autocomplete(this.addressInput, {
-			//options
+			componentRestrictions: {
+				country: 'us',
+			}
 		});
 
 		this._geolocateUserForAutocomplete();
