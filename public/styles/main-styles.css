@@ -1,3 +1,9 @@
+/** Helper Classes */
+
+.is-hidden {
+  display: none !important;
+}
+
 .content-wrapper {
   max-width: 1000px;
   padding: 0 1rem;
@@ -6,28 +12,15 @@
   box-sizing: border-box;
 }
 
-.header-input-wrapper {
-  margin-bottom: 1rem;
-}
-
-.input-address {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 1.25rem;
-}
-
-.mdl-layout-title {
-  font-size: 2rem;
-}
+/** Base Styling */
 
 body {
   background: #eee;
 }
 
-h6 {
-  font-size: 2.5em;
-  color: darkgrey;
+h3 {
+  font-size: 2rem;
+  line-height: 1.4;
 }
 
 ul {
@@ -46,12 +39,44 @@ p {
   color: grey;
 }
 
+/** Header */
+
+.header-input-wrapper {
+  margin-bottom: 1rem;
+}
+
+.input-address {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+}
+
+.mdl-layout-title {
+  font-size: 2rem;
+}
+
+/** Basic Components */
+
 .mdl-card {
   padding: 1.5rem;
   position: relative;
   width: 100%;
   margin-right: 0;
   margin-left: 0;
+}
+
+.mdl-card-text {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+/** Representative Data */
+
+.rep-data-container > h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #757575;
 }
 
 .rep-card-content {
@@ -63,26 +88,19 @@ p {
   flex-direction: row;
 }
 
-.mdl-card-text {
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-
 .left-content {
   width: calc(100% - 225px);
+}
+
+.left-content p {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 
 .rep-image {
   width: 225px;
   height: auto;
-}
-
-.rep-title, .rep-affil {
-  font-size: 2em;
-}
-
-.right-content, .left-content {
-  display: inline-block;
 }
 
 .call-button {
@@ -97,11 +115,27 @@ p {
   border-radius: 0;
   text-align: center;
   font-size: 2.5rem;
-  line-height: 1;
 }
 
-.rep-data-container > h3 {
-  font-size: 1.5rem;
-  text-align: center;
-  color: #757575;
+.call-button i {
+  margin-right: 2rem;
+  font-size: 1em;
+  vertical-align: top;
+}
+
+@media (max-width: 600px) {
+  body, html {
+    font-size: 12px;
+  }
+  .rep-image {
+    width: 100%;
+  }
+
+  .right-content {
+    width: 33.3%;
+  }
+
+  .left-content {
+    width: 66.6%;
+  }
 }
