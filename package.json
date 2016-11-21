@@ -8,9 +8,8 @@
     "build": "next build",
     "start": "next start",
     "people": "node data/download.js",
-    "generate-react": "node data/react-entrypoint-generator.js",
-    "generate-html": "node data/html-generator.js",
-    "static": "npm run generate-react && npm run generate-html",
+    "generate-html": "node data/generate-html.js",
+    "static": "npm run generate-html",
     "upload-s3": "node data/upload-s3.js"
   },
   "keywords": [
@@ -24,13 +23,7 @@
   },
   "devDependencies": {
     "aws-sdk": "^2.7.5",
-    "sync-exec": "^0.6.2",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0",
-    "static-react": "^3.2.0"
-  },
-  "devDependencies": {
-    "aws-sdk": "^2.7.5",
+    "handlebars": "^4.0.6",
     "sync-exec": "^0.6.2"
   },
   "contributors": [
