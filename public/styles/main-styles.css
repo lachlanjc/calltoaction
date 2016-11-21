@@ -93,9 +93,15 @@ p {
   margin-left: 0;
 }
 
+.mdl-card-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .mdl-card-text {
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
 /** Representative Data */
