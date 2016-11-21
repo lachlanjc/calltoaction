@@ -8,8 +8,6 @@ var app = {
 
 	baseCivicsURL: 'https://www.googleapis.com/civicinfo/v2',
 
-	civicsKey: 'AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig',
-
 	/**
 	 * Set up google address autocomplete on the address input
 	 */
@@ -80,17 +78,14 @@ var app = {
 			}
 		}.bind(app);
 
-		request.open(
-			'GET',
-			this.baseCivicsURL + '/representatives?' + queryString
-		);
+		request.open('GET', this.baseCivicsURL + '/representatives?' + queryString);
 
 		request.send(null);
 	},
 
 	_getRepSearchQueryString: function() {
 		return this._encodeData({
-			key: this.civicsKey,
+			key: 'AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig',
 			address: this.getFormattedAddress(),
 			fields: 'divisions',
 			includeOffices: false
@@ -110,7 +105,27 @@ var app = {
 	 * @param  {string} districtNum
 	 */
 	getRepresentativeData: function(state, districtNum) {
-		debugger;
+		var request = new XMLHttpRequest();
+
+		request.onreadystatechange = function() {
+			if (request.readyState === 4 && request.status === 200) {
+				this.renderRepresentativeCard(request.responseText);
+			} else {
+				// handle errors
+			}
+		}.bind(app);
+
+		request.open('GET', 'http://cdn.usecalltoaction.com/' + state + '-' + districtNum + '.html');
+
+		request.send(null);
+	},
+
+	/**
+	 * [renderRepresentativeCard description]
+	 * @param  {string} templateString
+	 */
+	renderRepresentativeCard: function(templateString) {
+
 	},
 };
 
