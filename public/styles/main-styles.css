@@ -57,10 +57,22 @@ p {
 
 .mdl-layout__header {
   background-color: #7D287D;
+  height: auto;
+  padding: 1rem;
+}
+
+.mdl-layout__header-row:first-child {
+  height: auto;
+  margin: 1rem auto .5rem;
+}
+
+.mdl-layout-title {
+  font-size: 2rem;
+  margin: 0;
 }
 
 .header-input-wrapper {
-  margin-bottom: 1rem;
+  margin: 0 auto;
 }
 
 .input-address {
@@ -68,10 +80,7 @@ p {
   padding: 10px;
   box-sizing: border-box;
   font-size: 1.25rem;
-}
-
-.mdl-layout-title {
-  font-size: 2rem;
+  font-family: inherit;
 }
 
 /** Basic Components */
