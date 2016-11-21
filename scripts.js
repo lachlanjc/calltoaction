@@ -20,11 +20,13 @@ var app = {
 			return;
 		}
 
-		this.autocomplete = new google.maps.places.SearchBox(this.addressInput);
+		this.autocomplete = new google.maps.places.Autocomplete(this.addressInput, {
+			//options
+		});
 
 		this._geolocateUserForAutocomplete();
 
-		this.autocomplete.addListener('places_changed', this.searchRepresentativesByAddress.bind(this));
+		this.autocomplete.addListener('place_changed', this.searchRepresentativesByAddress.bind(this));
 	},
 
 	/**
@@ -53,8 +55,11 @@ var app = {
 	 * @return {string}
 	 */
 	getFormattedAddress: function() {
-		var address = this.autocomplete && this.autocomplete.getPlaces()[0];
-		return address ? address.formatted_address : this.addressInput.value;
+		var address = this.autocomplete && this.autocomplete.getPlace();
+		return (address && address.formatted_address) 
+			? address.formatted_address 
+			: this.addressInput.value
+		;
 	},
 
 	/**
@@ -65,10 +70,10 @@ var app = {
 		var queryString = this._getRepSearchQueryString();
 		var request = new XMLHttpRequest();
 
-		var formattedAddress = this.getFormattedAddress();
-		if (this.addressInput.value !== formattedAddress) {
-			this.addressInput.value = formattedAddress;
-		}
+		// var formattedAddress = this.getFormattedAddress();
+		// if (this.addressInput.value !== formattedAddress) {
+		// 	this.addressInput.value = formattedAddress;
+		// }
 
 		request.onreadystatechange = function() {
 			if (request.readyState === 4 && request.status === 200) {
