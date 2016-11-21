@@ -70,12 +70,23 @@ p {
   margin: 0 auto;
 }
 
-.input-address {
+.mdl-layout__header .mdl-textfield {
   width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 1.25rem;
+}
+
+.mdl-layout__header .mdl-textfield__input {
   font-family: inherit;
+  font-size: 1.5rem;
+  border-bottom-color: rgba(255, 255, 255, .5) !important;
+}
+
+.mdl-layout__header .mdl-textfield__label:after {
+  background-color: #FFF !important;
+}
+
+.mdl-layout__header .mdl-textfield__label,
+.mdl-layout__header .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+  color: #FFF !important;
 }
 
 /** Basic Components */
