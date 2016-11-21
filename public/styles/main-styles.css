@@ -144,6 +144,7 @@ p {
 .rep-image {
   width: 225px;
   height: auto;
+  margin-left: 1rem;
 }
 
 .call-button {
