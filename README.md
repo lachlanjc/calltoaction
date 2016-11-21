@@ -1,10 +1,9 @@
 Call to Action
 ==============
+Call Congress with a tap
 
-Call your representatives in Congress.
-
-Coming soon.
+Easily find and call your Congressional representative and have your voice heard!
 
 ---
 
-*A thing by @lachlanjc, @zackshapiro, and @mitulp91, @daniellealexis, and @simkhosla*
+*By @lachlanjc, @zackshapiro, and @mitulp91, @daniellealexis, and @simkhosla*
