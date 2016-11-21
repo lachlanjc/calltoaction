@@ -1,3 +1,5 @@
+/*purple = #7D287D */
+
 /** Helper Classes */
 
 .is-hidden {
@@ -40,6 +42,10 @@ p {
 }
 
 /** Header */
+
+.mdl-layout__header {
+  background-color: #7D287D;
+}
 
 .header-input-wrapper {
   margin-bottom: 1rem;
@@ -110,7 +116,7 @@ p {
   width: 102%;
   width: calc(100% + 1rem);
   padding: 1rem;
-  background: rgb(156,39,176);
+  background: #7D287D;
   color: #FFF;
   border-radius: 0;
   text-align: center;
