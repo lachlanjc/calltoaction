@@ -103,7 +103,8 @@ p {
   margin-left: 0;
 }
 
-.mdl-card-title {
+.mdl-card-title,
+.rep-name {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -157,7 +158,7 @@ p {
   color: #FFF;
   border-radius: 0;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
 }
 
 .call-button i {
