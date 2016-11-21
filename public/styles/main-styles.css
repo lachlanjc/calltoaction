@@ -78,6 +78,7 @@ p {
   font-family: inherit;
   font-size: 1.5rem;
   border-bottom-color: rgba(255, 255, 255, .5) !important;
+  border-radius: 0;
 }
 
 .mdl-layout__header .mdl-textfield__input::placeholder {
