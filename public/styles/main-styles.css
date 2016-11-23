@@ -87,19 +87,19 @@ p {
 
 .header-input-wrapper .input-address::-webkit-input-placeholder {
   color: #bdbdbd;
-  font-weight: 200;
+  font-weight: 300;
 }
 .header-input-wrapper .input-address::-moz-placeholder {
   color: #bdbdbd;
-  font-weight: 200;
+  font-weight: 300;
 }
 .header-input-wrapper .input-address:-ms-input-placeholder {
   color: #bdbdbd;
-  font-weight: 200;
+  font-weight: 300;
 }
 .header-input-wrapper .input-address:-moz-placeholder {
   color: #bdbdbd;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .mdl-layout__header .mdl-textfield__input::-webkit-input-placeholder {
