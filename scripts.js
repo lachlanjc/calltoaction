@@ -1,5 +1,3 @@
-'use strict';
-
 var app = {
 
 	addressInput: document.getElementsByClassName('input-address')[0],
