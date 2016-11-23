@@ -28,11 +28,6 @@ var app = {
 
 		this._geolocateUserForAutocomplete();
 
-		this.addressInput.addEventListener('blur', function(e){
-			this.searchRepresentativesByAddress(e);
-			console.log('blur');
-		}.bind(this));
-
 		this.autocomplete.addListener('place_changed', this.searchRepresentativesByAddress.bind(this));
 	},
 
@@ -178,7 +173,9 @@ var app = {
 		var repCardList = document.getElementById('repList');
 
 		// Remove hidden class
-		repContainer && (repContainer.classList = '');
+		if (repContainer) {
+			repContainer.classList = '';
+		}
 
 		// Add rep-card to page
 		repCardList.innerHTML = templateString;
