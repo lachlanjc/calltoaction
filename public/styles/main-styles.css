@@ -67,7 +67,7 @@ p {
 }
 
 .header-input-wrapper {
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
 }
 
 .mdl-layout__header .mdl-textfield {
