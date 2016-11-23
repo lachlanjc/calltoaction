@@ -198,4 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	app.addressInput = document.getElementsByClassName('input-address')[0];
 
 	app.initAutocomplete();
+
+	document.getElementById('submitAddress')
+		.addEventListener('click', app.searchRepresentativesByAddress.bind(app));
 });

@@ -70,8 +70,15 @@ p {
   margin: 0.5rem auto 0;
 }
 
-.mdl-layout__header .mdl-textfield {
+.header-input-wrapper .mdl-textfield {
   width: 100%;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.mdl-layout__header .mdl-textfield {
+
 }
 
 .mdl-layout__header .mdl-textfield__input {
