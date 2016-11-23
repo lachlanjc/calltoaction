@@ -102,6 +102,19 @@ p {
   font-weight: 200;
 }
 
+.mdl-layout__header .mdl-textfield__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, .75) !important;
+}
+.mdl-layout__header .mdl-textfield__input::-moz-placeholder {
+  color: rgba(255, 255, 255, .75) !important;
+}
+.mdl-layout__header .mdl-textfield__input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, .75) !important;
+}
+.mdl-layout__header .mdl-textfield__input:-moz-placeholder {
+  color: rgba(255, 255, 255, .75) !important;
+}
+
 .mdl-layout__header .mdl-textfield__input::placeholder {
   color: rgba(255, 255, 255, .75) !important;
 }
