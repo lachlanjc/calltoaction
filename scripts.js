@@ -61,7 +61,7 @@ var app = {
 	 * Returns the formatted address from the autocomplete input
 	 * @return {string}
 	 */
-	getFormattedAddress: function() {
+	getAddressInputValue: function() {
 		var address = this.autocomplete && this.autocomplete.getPlace();
 		return (address && address.formatted_address)
 			? address.formatted_address
@@ -77,7 +77,12 @@ var app = {
 		var queryString = this._getRepSearchQueryString();
 		var request = new XMLHttpRequest();
 
-		// var formattedAddress = this.getFormattedAddress();
+		// Don't search if input is empty
+		if (this.getAddressInputValue().length === 0) {
+			return false;
+		}
+
+		// var formattedAddress = this.getAddressInputValue();
 		// if (this.addressInput.value !== formattedAddress) {
 		// 	this.addressInput.value = formattedAddress;
 		// }
@@ -121,7 +126,7 @@ var app = {
 	_getRepSearchQueryString: function() {
 		return this._encodeData({
 			key: 'AIzaSyAQmMQg6Ti1XSiWULzRqJIdLS4lwS6muig',
-			address: this.getFormattedAddress(),
+			address: this.getAddressInputValue(),
 			fields: 'divisions',
 			includeOffices: false
 		});
