@@ -67,7 +67,11 @@ p {
 }
 
 .header-input-wrapper {
-  margin: 0.5rem auto 0;
+  margin: 1rem auto 0;
+}
+
+.header-input-wrapper .mdl-textfield .mdl-textfield__label {
+  top: 0;
 }
 
 .mdl-layout__header .mdl-textfield {
@@ -79,6 +83,23 @@ p {
   font-size: 1.5rem;
   border-bottom-color: rgba(255, 255, 255, .5) !important;
   border-radius: 0;
+}
+
+.header-input-wrapper .input-address::-webkit-input-placeholder {
+  color: #bdbdbd;
+  font-weight: 200;
+}
+.header-input-wrapper .input-address::-moz-placeholder {
+  color: #bdbdbd;
+  font-weight: 200;
+}
+.header-input-wrapper .input-address:-ms-input-placeholder {
+  color: #bdbdbd;
+  font-weight: 200;
+}
+.header-input-wrapper .input-address:-moz-placeholder {
+  color: #bdbdbd;
+  font-weight: 200;
 }
 
 .mdl-layout__header .mdl-textfield__input::placeholder {
