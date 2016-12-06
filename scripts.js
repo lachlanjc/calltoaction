@@ -11,6 +11,25 @@ var app = {
 	baseCivicsURL: 'https://www.googleapis.com/civicinfo/v2',
 
 	/**
+	 * Add tracking to the social share buttons
+	 */
+	bindSocialSharingClick: function() {
+		var buttons = document.getElementsByClassName('social-share');
+
+		for (var i = 0, length = buttons.length; i < length; i++) {
+			buttons[i].addEventListener('click', function(e) {
+				var shareMethod = e.currentTarget.getAttribute('share-method');
+
+				app._trackEvent({
+					eventAction: 'click',
+					eventCategory: 'Social Share Button',
+					eventLabel: shareMethod,
+				});
+			});
+		}
+	},
+
+	/**
 	 * Set up google address autocomplete on the address input
 	 */
 	initAutocomplete: function() {
@@ -177,6 +196,31 @@ var app = {
 
 		// Add rep-card to page
 		repCardList.innerHTML = templateString;
+
+		this._bindCallButtonClick(repCardList.getElementsByClassName('call-button')[0]);
+	},
+
+	_bindCallButtonClick: function(element) {
+		if (!element) {
+			return;
+		}
+
+		element.addEventListener('click', function(e) {
+			var button = e.currentTarget;
+			var telNumber = button.getAttribute('href');
+
+			// Remove all non-digit characters & change to an integer
+			if (telNumber) {
+				telNumber = parseInt(telNumber.replace(/\D/g, ''), 10);
+			}
+
+			app._trackEvent({
+				eventAction: 'click',
+				eventCategory: 'Call Button',
+				eventLabel: 'Congressional Rep',
+				eventValue: telNumber,
+			});
+		});
 	},
 
 	_handleSearchError: function() {
@@ -186,6 +230,32 @@ var app = {
 	_testRenderRepresentativeCard: function() {
 		this.renderRepresentativeCard(this.devDummyData);
 	},
+
+	/**
+	 * Wrapper function for event tracking
+	 * @param  {object} eventOptions
+	 *      Possible values:
+	 *      	{string} eventCategory *required
+	 *      	{string} eventAction *required
+	 *      	{string} eventLabel
+	 *      	{integer} eventValue
+	 *
+	 * https://developers.google.com/analytics/devguides/collection/analyticsjs/events
+	 */
+	_trackEvent: function(eventOptions) {
+		if (typeof ga !== 'function' || !eventOptions ||
+			typeof eventOptions.eventCategory === 'undefined' ||
+			typeof eventOptions.eventAction === 'undefined'
+		) {
+			return;
+		}
+
+		if (!eventOptions.hitType) {
+			eventOptions.hitType = 'event';
+		}
+
+		ga('send', eventOptions);
+	},
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -193,4 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	app.addressInput = document.getElementsByClassName('input-address')[0];
 
 	app.initAutocomplete();
+
+	app.bindSocialSharingClick();
 });
