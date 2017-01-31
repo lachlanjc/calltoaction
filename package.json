@@ -1,12 +1,10 @@
 {
   "name": "calltoaction",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Call your representatives in Congress.",
   "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "start": "open index.html",
     "people": "node data/download.js",
     "generate-html": "node data/generate-html.js",
     "static": "npm run generate-html",
@@ -15,15 +13,10 @@
   "keywords": [
     "politics"
   ],
-  "dependencies": {
-    "axios": "latest",
-    "lodash": "latest",
-    "material-ui": "^0.16.4",
-    "next": "latest"
-  },
   "devDependencies": {
-    "aws-sdk": "^2.7.5",
+    "aws-sdk": "^2.9.0",
     "handlebars": "^4.0.6",
+    "lodash": "^4.17.4",
     "sync-exec": "^0.6.2"
   },
   "contributors": [
